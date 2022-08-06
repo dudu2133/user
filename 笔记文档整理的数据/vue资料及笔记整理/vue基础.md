@@ -188,3 +188,59 @@
         + 导入样式表 import 'mint-ui/lib/style.min.css'
         + Vue.use(MintUI)
         + css组件(看文件吧....)
+
+#路径传参
+```html
+	<router-link :to="{name:'home',params:{id:''}}">
+	 <router-link to="home">home</router-link>
+	      <router-view class="col-md-11"></router-view>
+<!-- 第二个文件 -->
+$route.name 接受name
+$route.parames.id 接受id
+、
+url传参
+
+
+```
+#路由的钩子函数
++ 进入路由之前
+ -配置方法
+	```javascript
+		{
+			path:'/home',
+			name:'home',
+		
+		}
+		// home 文件
+		export defult {
+			name:'home',
+			data:function(){
+				
+			},
+			methods:{
+				qianjian(){
+					this.$roter.go(1)
+				},
+				houtui(){
+					this.$router.go(1)
+				},
+				renyi(){
+					this,$router.push('path');
+				}
+			},
+			beforeEnter:function(to,from,next){
+				//在进入路由之前
+				// 不会进入页面 开关的作用
+				next(false)
+				// 进入页面则是
+				next(true);
+				//to 代表从哪个路径进来的
+				//<!-- from 证明要到那个路径去 -->
+			},
+			beforeLive:function(to,from,next){
+				//	离开之前
+			}
+		}
+	```
++ 离开路由之后 beforeLive
++ http://mint-ui.github.io/docs/#/en2/field
