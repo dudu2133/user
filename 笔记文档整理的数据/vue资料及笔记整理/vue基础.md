@@ -251,3 +251,128 @@ url传参
 	```
 + 离开路由之后 beforeLive
 + http://mint-ui.github.io/docs/#/en2/field
+## Vue 
+
+### 介绍
+
++ 是一套用于构建用户界面的渐进式框架
++ 创建Vue实例 new Vue()  
++ 一个vue应用由 一个vue实例 + 可选可嵌套可复用的组件树组成
++ 所有的Vue组件都是Vue实例 ，而一个完整的项目是由多个vue实例组成的
++ Object.freeze(obj); 冻结对象
+
++ 实例生命周期钩子
+  + new Vue 实例化vue对象
+  + init Events& Lifecycle 初始化事件和生命周期
+  + beforeCreate()  创建实例之前执行钩子事件
+  + created() 创建完成之后执行的钩子
+  + 判断el存不存在 存在则绑定 不存在则检测$mount()放法
+  + 判断是不是模板 是则将其转换为可视化的html
+  + beforeMount 将编译好的html挂载到对应的虚拟dom上的时候出发钩子（此时页面没有内容）
+  + mounted 将编译好的html加载到页面上完成事件钩子，此函数一般加载ajax数据请求，只执行一次
+  + 这时候基本上都已经加载完成
+  + 监听数据的变化并且随时准备更新dom
+  + beforUpdate() 更新之前 触发此钩子
+  + updated() 更新之后触发此狗子
+  + beforDestro() 销毁之前
+  + destroyed()销毁之后
++ 模板基础语法
+  + {{}}插值表达式写法
+
+  + v-once 这个标签之渲染一次(之后当text更新之后便不会更新) \<span v-once\>{{text}}</span\>
+
+  + v-bind: 
+
+  + 表达式 {{}} (每个绑定都包含一个表达式而不是一条语句)
+
+  + 一条指令只能接受一个参数 (例如：v-on:click="fn" , )
+
+  + 修饰符 v-on:click.stop 用于停止冒泡 每个一事件或者v-model 等属性都有特定的修饰符
+
+  + 计算属性
+
+    ```javascript
+    computed:{
+        fullName:{
+            get(){
+                return this.fullName
+            },
+            set(newValue){
+                
+            }
+        }
+    }
+    ```
+
++ class 绑定 
+
+  + 表达式结果的类型除了字符串之外，还可以是对象或数组。
+  + {'className':flg} 对象模式绑定 
+  + [obj,obj]数组模式绑定
+
++ style 绑定
+
+  + 自动添加前缀 - webkit-
+
++ v-if 元素条件分支语句
+  + v-else
+  + v-else-if
+
++ v-show 元素始终保留着dom当中
+
++ v-for 把一个数组或对象转换为一组元素
+
+  + v-for="item in arr"
+
++ 数组更新检测
+  + push()
+  + pop()
+  + shift()
+  + unshift()
+  + splice()
+  + sort()
+  + recerse()
+  + concat()
+  + slice()
+  + filter()
+  + 主意 VUE 不检测直接更改数组内部的内容 (arr[0]=1)
++ 事件处理
+  + $event 事件句柄
+  + 修饰符
+  + .stop   阻止冒泡
+  + .prevent 提交事件不在重新加载页面
+  + .capture 修饰可以串联
+  + .self 事件不是从内部元素触发而是本身触发
+  + once：
+
++ 按键修饰符
+  + v-on:keyup.13 = "事件"
+  + 别名: 
+    + .enter
+    + .delete
+    + .esc
+    + .space
+    + .up
+    + .down
+    + .left
+    + .down
+    + .left
+    + .right
+  + 可以通过 Vue.config.KeyCodes.别名=键值   来设置具体的按键
+
++ 鼠标事件
+  + .right
+  + .left
+  + .middle
+  + 注 : 这些修饰符会限制处理函数仅响应特定的鼠标按钮。
+
++ v-model 修饰符
+  + .lazy 默认情况下v-mdel 是同步加载的 而使用这个只会在change事件下进行同步加载 
+  + .number 只能输入nuber
+  + .trim 删除空格
+
++ 组件基础
+  + 组件能复用
+  + 注册
+    + Vue.compontent('bjName',{opctie})
+  + prop
