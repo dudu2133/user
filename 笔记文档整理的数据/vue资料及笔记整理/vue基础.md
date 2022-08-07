@@ -73,29 +73,36 @@
 + v-text 将data中的变量值以text的形式解析到dom元素中,使用的时textContent属性
 + v-once 将data中的变量解析到html当中去,当变量发生更新时不会重新渲染html元素
 + v-pre  将data中的变量值进行预处理格式输出
-+ v-show 将data中的变量值解析为布尔类型,在通过display block(true) none(false) 进行操作
-+ v-if 将data中的变量值解析为布尔了类型再通过元素的插入删除操作
++ v-show 将data中的变量值解析为布尔类型,在通过display block(true) none(false) 进行操作 元素本身不会被删除 
++ v-if 将data中的变量值解析为布尔了类型再通过元素的插入删除操作 删除本身
 + v-ifelse
 + v-else 
 + v-clack 在编译环节可以通过css操作其隐藏 编译完成之后会移除这个属性
++ v-show 和v-if 的区别
+    - v-show 在通过display block(true) none(false)
+    - v-if 通过元素增删 进行的操作
++ v-show 和 v-if 都在什么情况下使用
+    - v-show 元素频繁使用的时候使用 例如: 弹框
+    - v-if 元素从始至终出现一次的时候使用
++ renderTree 
 ## 事件
-+ v-on    动态的绑定事件 可以传递数组 也可以传递 函数
-+ v-bind  动态改变属性 class和style 可以绑定数组和对象 传递prop
-+ v-model 绑定给inputinput输入框内容改变与其绑定的数据也会发生改变
++ v-on @   动态的绑定事件 可以传递数组 也可以传递 函数
++ v-bind : 动态改变属性 class和style 可以绑定数组和对象 传递prop
++ v-model  绑定给inputinput输入框内容改变与其绑定的数据也会发生改变
 
 
 
 ## 父子通信
 + 父级向子级通信
     + 父级调用子集标签时添加 :data="data"
-    + 子集添加 props:[data]
-+ 子级向父级通信
+    + 子集添加 props:['data']
++ 子级向父级通信 
     + 父级绑定$on自定义事件(注意事项$on是v-on绑定的事件)
     + 子级利用$emit(事件名,参数1,参数2) 来触发父级的事件
 + 打通父子通信
     + 父组件:<child ref="child1"></child>
     + 子组件:this.$parent.方法/变量
-    + 父组件:this.$ref.子组件名.变量/方法
+    + 父组件:this.$refs.子组件名.变量/方法
 + 兄弟通信
     + new Vue()
     + vue.$on('事件名',fn)
