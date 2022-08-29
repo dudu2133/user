@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
-
     strategy:
       matrix:
         node-version: [15.x]
