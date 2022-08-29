@@ -18,19 +18,4 @@ fs.writeFile('./try5.txt', 'HelloWorld', function(err) {
 
     console.log('Hello.');
 
-  
-
-    // 写入成功后读取测试
-
-    fs.readFile('./try4.txt', 'utf-8', function(err, data) {
-        if (err) {
-
-            throw err;
-
-        }
-
-        console.log(data);
-
-    });
-
 });

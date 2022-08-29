@@ -21,3 +21,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run: npm run dev
+    - uses: JamesIves/github-pages-deploy-action@v4
