@@ -57,7 +57,7 @@ jobs:
     - name: Install and Build
       run: |
         npm install
-        npm run build
+        npm run dev
     # 这里引用了别人写好的发布库，具体参数信息可以查阅上面的链接
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.0.0
