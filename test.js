@@ -6,7 +6,7 @@ var fs = require('fs'); // 引入fs模块
 
 // 传递了追加参数 { 'flag': 'a' }
 
-fs.writeFile('./try4.txt', 'HelloWorld', { 'flag': 'a' }, function(err) {
+fs.writeFile('./try5.txt', 'HelloWorld', { 'flag': 'a' }, function(err) {
 
     if (err) {
 
