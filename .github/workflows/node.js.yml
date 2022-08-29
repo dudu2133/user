@@ -18,4 +18,9 @@ jobs:
       matrix:
         node-version: [15.x]
     steps:
-    - run: echo "test" > a.txt
+    - run: |
+      npm run dev
+    - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          folder: dist # The folder the action should deploy.

@@ -1,0 +1,19 @@
+{
+  "name": "user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "dev":"node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dudu2133/user.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dudu2133/user/issues"
+  },
+  "homepage": "https://github.com/dudu2133/user#readme"
+}
