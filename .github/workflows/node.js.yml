@@ -28,11 +28,6 @@ jobs:
         run: |
           npm run dev
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with: 
-          folder: dist
-
       # Runs a set of commands using the runners shell
       # - name: npm install
       #   run: |
