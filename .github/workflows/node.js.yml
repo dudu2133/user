@@ -18,7 +18,7 @@ jobs:
     steps:
     - run: |
         npm run dev
-    - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist # The folder the action should deploy.
+    # - name: Deploy
+    #     uses: JamesIves/github-pages-deploy-action@v4
+    #     with:
+    #       folder: dist # The folder the action should deploy.
