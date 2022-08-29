@@ -82,11 +82,7 @@
     <img src="{{imgsrc}}">
     
     判断条件
-    <!-- {% if age > 18 %} 满18了 {% elif %} 不满啊
-    
-    {% for i in range(5) %}
-    
-    {% endfor %} -->
+  
     
     直接写数据
     ```
