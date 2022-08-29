@@ -1,26 +1,222 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+栗佳 2022/8/28 14:44:32
+新的指令生成软件
 
-name: Node.js CI
+。。。 2022/8/28 14:44:41
+？
 
+。。。 2022/8/28 14:44:45
+啥玩意
+
+栗佳 2022/8/28 14:44:57
+
+
+。。。 2022/8/28 14:45:14
+行
+
+。。。 2022/8/28 14:45:18
+
+
+栗佳 2022/8/28 14:45:34
+之前那个生成指令的网址好像黄了
+
+栗佳 2022/8/28 14:45:38
+我试了下进不去了
+
+。。。 2022/8/28 14:45:44
+。。
+
+栗佳 2022/8/28 15:04:14
+夜兰吃不吃班尼特的加成
+
+。。。 2022/8/28 15:09:31
+不吃
+
+。。。 2022/8/28 15:09:47
+夜兰是看生命的
+
+栗佳 2022/8/28 15:10:42
+那这么说，妮露也不吃了
+
+。。。 2022/8/28 15:19:44
+应该是
+
+满眼星辰 2022/8/28 17:49:03
+
+
+栗佳 2022/8/28 17:57:40
+等我吃完饭
+
+。。。 2022/8/28 18:07:28
+我吃完饭再上
+
+。。。 2022/8/28 18:07:43
+
+
+栗佳 2022/8/28 19:10:14
+雾散云披 邀请您加入【雾散云披的个人会议室】
+
+点击链接直接加入会议：
+https://meeting.tencent.com/p/7803857289
+
+#腾讯会议：780-385-7289
+
+复制该信息，打开手机腾讯会议即可参与
+
+栗佳 2022/8/28 19:10:16
+上人
+
+。。。 2022/8/28 19:12:04
+
+
+。。。 0:04:26
+新活动！
+
+。。。 0:04:37
+真不戳
+
+。。。 7:58:03
+肝不动了。。
+
+。。。 7:58:09
+
+
+。。。 10:15:57
+有人没
+
+。。。 10:16:02
+刷本不
+
+。。。 10:16:08
+麻了
+
+。。。 10:16:15
+树脂溢出了
+
+。。。 17:10:19
+
+
+。。。 17:10:20
+我的痛苦
+
+。。。 17:10:27
+
+
+满眼星辰 17:11:02
+。。。
+
+满眼星辰 17:11:05
+话没刷呢？
+
+。。。 17:17:46
+？
+
+。。。 19:29:48
+出新成就了
+
+。。。 19:29:54
+一个boss10原石
+
+。。。 19:30:03
+
+
+。。。 20:16:05
+这任务
+
+。。。 20:16:08
+真是妙啊
+
+。。。 20:16:07
+
+
+满眼星辰 20:33:09
+..
+
+。。。 20:33:49
+第一次见别人给我做饭的任务
+
+。。。 20:33:55
+
+
+。。。 20:34:14
+须弥日常，食与学
+
+。。。 20:34:22
+你给他一个土豆
+
+。。。 20:35:00
+他给你一个
+
+。。。 20:35:13
+
+
+。。。 20:35:22
+
+
+。。。 20:46:46
+
+
+满眼星辰 20:59:08
+不是我在玩。。。
+
+。。。 21:04:00
+。。
+
+。。。 21:23:24
+
+
+。。。 21:28:16
+nb
+
+。。。 21:28:17
+
+
+栗佳 22:57:35
+
+
+栗佳 22:59:35
+
+
+栗佳 22:59:45
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # This workflow contains a single job called "build"
   build:
-
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@v3
-    - run: npm run dev
-    - uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: dist
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: install and build 
+        run: |
+          npm run dev
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with: 
+          folder: dist
+
+      # Runs a set of commands using the runners shell
+      # - name: npm install
+      #   run: |
+      #     echo Add other actions to build,
+      #     echo test, and deploy your project.
+
